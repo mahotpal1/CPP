@@ -20,6 +20,7 @@ int main(){
   }else{
     cout << "Insufficient Account" << endl;
   }
-  
+  cout << "Balance : " << vishal_account.get_balance() << endl;
+
   return 0;
 }
