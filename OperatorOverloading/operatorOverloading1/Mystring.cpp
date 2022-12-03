@@ -1,4 +1,5 @@
 #include <cstring>
+#include<string>
 #include "Mystring.h"
 #include <iostream>
 
@@ -30,6 +31,15 @@ Mystring::~Mystring(){
   delete [] str;
 }
 
+Mystring &Mystring::operator=(const Mystring &rhs){
+  std::cout << "Copy operator! " <<std::endl;
+  if(this == &rhs)
+    return *this;
+  delete [] this->str;
+  str = new char[std::strlen(rhs.str)];
+  std::strcpy(this->str, rhs.str);
+  return *this;
+}
 void Mystring::display() const{
   std::cout << str << ":" << get_length() << std::endl;
 }
